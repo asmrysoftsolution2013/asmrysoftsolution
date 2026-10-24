@@ -10,6 +10,13 @@
 <meta property="og:url" content="https://asmrysoftsolution.com/">
 <meta property="og:title" content="ASMRY Soft Solution — Smart Software for Smart Businesses">
 <meta property="og:description" content="POS, poultry, property, gold shop, marriage hall, rice mill and mining software, plus AI and machine learning services. Book a free demo.">
+<meta property="og:site_name" content="ASMRY Soft Solution">
+<meta property="og:image" content="https://asmrysoftsolution.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ASMRY Soft Solution: smart software for smart businesses">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://asmrysoftsolution.com/og-image.png">
 <meta name="theme-color" content="#0C1234">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232F5BFF'/%3E%3Cpath d='M18 48 32 16l14 32M24 36h16' fill='none' stroke='white' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -487,6 +494,46 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1rem}
 @media (max-width:900px){.contact-box{grid-template-columns:1fr}}
 @media (max-width:520px){form{grid-template-columns:1fr}.contact-box{border-radius:24px;margin:0 calc(-1*clamp(1.1rem,4vw,2.5rem)*.5)}}
 
+/* Customer feedback */
+.reviews{padding:0 0 clamp(4.5rem,9vw,7rem)}
+.rv-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem 2rem;margin-bottom:2.25rem}
+.rv-head .lead{max-width:30rem}
+.rv-sum{display:flex;align-items:center;gap:.9rem;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:.9rem 1.2rem}
+.rv-sum b{font:800 2rem/1 var(--display)}
+.rv-sum small{display:block;color:var(--muted);font-size:.85rem}
+.stars{display:inline-flex;gap:2px;color:#F5A524}
+.stars svg{width:18px;height:18px}
+.stars .off{color:color-mix(in srgb,var(--muted) 35%,transparent)}
+.rv-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:1.5rem;align-items:start}
+.rv-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.rv-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.4rem;display:flex;flex-direction:column;gap:.9rem}
+.rv-card q{display:block;quotes:none;font-size:1.02rem;line-height:1.55}
+.rv-card q::before,.rv-card q::after{content:none}
+.rv-who{display:flex;align-items:center;gap:.75rem;margin-top:auto;padding-top:.9rem;border-top:1px solid var(--line)}
+.rv-av{width:40px;height:40px;border-radius:50%;background:var(--blue-soft);color:var(--blue-ink);display:grid;place-items:center;font-weight:700;flex:none}
+.rv-who b{display:block;font-weight:600;line-height:1.2}
+.rv-who small{display:block;color:var(--muted);font-size:.85rem}
+.rv-empty{grid-column:1/-1;border:1.5px dashed var(--line);border-radius:20px;padding:2.5rem 1.5rem;text-align:center;color:var(--muted)}
+.rv-empty b{display:block;color:var(--ink);font-size:1.1rem;margin-bottom:.3rem}
+.rv-more{grid-column:1/-1;justify-self:center}
+.rv-form{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:clamp(1.4rem,3vw,2rem);position:sticky;top:100px}
+.rv-form h3{font-size:1.4rem}
+.rv-form > p{margin:.35rem 0 1.2rem;color:var(--muted);font-size:.95rem}
+.rv-form form{grid-template-columns:1fr}
+.rv-sum[hidden]{display:none}
+.rate{border:0;margin:0;padding:0;min-width:0}
+.rate legend{font-weight:600;font-size:.9rem;margin-bottom:.35rem;padding:0}
+.rate-in{display:inline-flex;flex-direction:row-reverse;gap:.15rem}
+.rate input{position:absolute;opacity:0;width:1px;height:1px}
+.rate label{cursor:pointer;color:color-mix(in srgb,var(--muted) 35%,transparent);padding:.1rem}
+.rate label svg{width:30px;height:30px}
+.rate input:checked ~ label,.rate label:hover,.rate label:hover ~ label{color:#F5A524}
+.rate input:focus-visible + label{outline:3px solid var(--blue);border-radius:6px}
+.rate-wrap{display:flex;flex-direction:column}
+#rvMsg{margin:.4rem 0 0;font-weight:500;font-size:.95rem;color:var(--teal);min-height:1.2em}
+@media (max-width:980px){.rv-grid{grid-template-columns:1fr}.rv-form{position:static}}
+@media (max-width:640px){.rv-list{grid-template-columns:1fr}}
+
 /* Footer */
 footer{border-top:1px solid var(--line);padding:3rem 0 2rem}
 .f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem}
@@ -506,6 +553,7 @@ footer a:hover{color:var(--blue-ink)}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
+<script src="firebase-config.js"></script>
 <!-- Google Ads tag: put your tag ID (AW-...) and conversion labels below -->
 <script>
 window.ADS={id:'AW-XXXXXXXXXX',form:'',whatsapp:'',call:''};
@@ -749,6 +797,37 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
     </div>
   </section>
 
+  <section class="reviews" id="feedback">
+    <div class="wrap">
+      <div class="rv-head">
+        <div><h2>What our customers say.</h2><p class="lead">Real feedback from businesses using ASMRY software. Every review is checked by our team before it appears here.</p></div>
+        <div class="rv-sum" id="rvSum" hidden><b id="rvAvg">5.0</b><div><span class="stars" id="rvAvgStars"></span><small id="rvCount"></small></div></div>
+      </div>
+      <div class="rv-grid">
+        <div class="rv-list" id="rvList" aria-live="polite"></div>
+        <aside class="rv-form">
+          <h3>Share your experience</h3>
+          <p>Using one of our products? Tell us how it’s going. Your feedback appears on the website after our team approves it.</p>
+          <form id="rvForm" novalidate>
+            <div class="field"><label for="r-name">Your name</label><input id="r-name" maxlength="60" autocomplete="name" aria-describedby="r-name-err"><span class="err" id="r-name-err"></span></div>
+            <div class="field"><label for="r-biz">Business name <span>(optional)</span></label><input id="r-biz" maxlength="80" autocomplete="organization"></div>
+            <div class="field"><label for="r-product">Product you use</label><select id="r-product"></select></div>
+            <div class="field rate-wrap"><fieldset class="rate" aria-describedby="r-rate-err"><legend>Your rating</legend><span class="rate-in">
+              <input type="radio" name="rating" id="r5" value="5"><label for="r5" title="5 stars"><span class="sr">5 stars</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></label>
+              <input type="radio" name="rating" id="r4" value="4"><label for="r4" title="4 stars"><span class="sr">4 stars</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></label>
+              <input type="radio" name="rating" id="r3" value="3"><label for="r3" title="3 stars"><span class="sr">3 stars</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></label>
+              <input type="radio" name="rating" id="r2" value="2"><label for="r2" title="2 stars"><span class="sr">2 stars</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></label>
+              <input type="radio" name="rating" id="r1" value="1"><label for="r1" title="1 star"><span class="sr">1 star</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></label>
+            </span></fieldset><span class="err" id="r-rate-err"></span></div>
+            <div class="field"><label for="r-msg">Your feedback</label><textarea id="r-msg" maxlength="600" placeholder="What has the software changed for your business?" aria-describedby="r-msg-err"></textarea><span class="err" id="r-msg-err"></span></div>
+            <button class="btn btn-primary" type="submit" id="rvBtn">Submit feedback</button>
+            <p id="rvMsg" role="status"></p>
+          </form>
+        </aside>
+      </div>
+    </div>
+  </section>
+
   <section class="faq" id="faq">
     <div class="wrap faq-grid">
       <div><h2>Common questions.</h2><p class="lead">Can’t find your answer? <a href="#contact" style="color:var(--blue-ink)">Ask us directly.</a></p></div>
@@ -805,7 +884,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
         <a href="#home" class="logo"><span class="mark"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20 12 4l7 16"/><path d="M8.2 13.8h7.6"/></svg></span><span><b>ASMRY</b><small>Soft Solution</small></span></a>
         <p style="color:var(--muted);max-width:20rem">Smart software for smart businesses. We build solutions, you grow your business.</p>
       </div>
-      <div><h4>Products</h4><p><a href="#products" data-go="0">POS Tijara</a><br><a href="#products" data-go="2">ChickMed</a><br><a href="#products" data-go="3">Flock 360</a><br><a href="#products" data-go="1">Estate Flow</a><br><a href="#products" data-go="4">AuricFlow</a><br><a href="#products" data-go="5">VenueFlow</a><br><a href="#ai">AI &amp; machine learning</a></p></div>
+      <div><h4>Products</h4><p><a href="#products" data-go="0">POS Tijara</a><br><a href="#products" data-go="2">ChickMed</a><br><a href="#products" data-go="3">Flock 360</a><br><a href="#products" data-go="1">Estate Flow</a><br><a href="#products" data-go="4">AuricFlow</a><br><a href="#products" data-go="5">VenueFlow</a><br><a href="#ai">AI &amp; machine learning</a><br><a href="#feedback">Customer feedback</a></p></div>
       <div><h4>Contact</h4><p><a href="https://wa.me/923349951063" target="_blank" rel="noopener">WhatsApp +92 334 9951063</a><br><a href="tel:+923466025485">+92 346 6025485</a><br><a href="mailto:asmrysoftsolution2013@gmail.com" style="overflow-wrap:anywhere">asmrysoftsolution2013@gmail.com</a></p></div>
       <div><h4>Office</h4><p>Doctors Colony, Muridke Road<br>Opposite Shara Medical College<br>Narowal, Pakistan<br>Mon–Fri, 9:00–18:00</p></div>
     </div>
@@ -969,12 +1048,61 @@ form.addEventListener('submit',e=>{
   if(first){first.focus();fmsg.textContent='';return}
   const text='Hello ASMRY Soft Solution,\n\nName: '+val('f-name')+'\nPhone: '+val('f-phone')+(val('f-biz')?'\nBusiness: '+val('f-biz'):'')+'\nInterested in: '+val('f-product')+(plan_&&val('f-product')==='Flock 360'?' ('+plan_+' plan)':'')+(val('f-msg')?'\n\n'+val('f-msg'):'');
   const url=via==='wa'?'https://wa.me/'+WA+'?text='+encodeURIComponent(text):'mailto:'+MAIL+'?subject='+encodeURIComponent('Demo request: '+val('f-product'))+'&body='+encodeURIComponent(text);
+  saveLead(via);
   const label=via==='wa'?'WhatsApp':'your email app';
   adsConv('form');
   const w=window.open(url,'_blank');if(w){try{w.opener=null}catch(_){}}
   fmsg.textContent=(w||via==='email')?'Opening '+label+' with your message. Press send there to deliver it. Nothing opened? ':'Your browser blocked the new window. ';
   const l=document.createElement('a');l.href=url;l.target='_blank';l.rel='noopener';l.textContent='Open '+label;fmsg.append(l);
 });
+
+/* ---------- Firebase (feedback + enquiries) ---------- */
+const FBCFG=(window.FIREBASE_CONFIG&&window.FIREBASE_CONFIG.apiKey&&!/YOUR_/.test(window.FIREBASE_CONFIG.apiKey))?window.FIREBASE_CONFIG:null;
+const FBV='https://cdn.jsdelivr.net/npm/firebase@10.12.2/';
+let _db=null,_dbP=null;
+const loadJS=src=>new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=rej;document.head.appendChild(s)});
+function getDB(){if(!FBCFG)return Promise.resolve(null);if(_dbP)return _dbP;_dbP=loadJS(FBV+'firebase-app-compat.js').then(()=>loadJS(FBV+'firebase-firestore-compat.js')).then(()=>{if(!firebase.apps.length)firebase.initializeApp(FBCFG);_db=firebase.firestore();return _db}).catch(()=>null);return _dbP}
+const esc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const STAR='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>';
+const starsHTML=n=>`<span class="stars" role="img" aria-label="${n} out of 5 stars">${[1,2,3,4,5].map(i=>`<span class="${i<=n?'':'off'}">${STAR}</span>`).join('')}</span>`;
+
+/* Approved feedback */
+const rvList=document.getElementById('rvList');let RV=[],rvShown=4;
+function renderReviews(){
+  if(!RV.length){rvList.innerHTML='<div class="rv-empty"><b>Customer feedback will appear here</b>Using our software? Be the first to share your experience.</div>';document.getElementById('rvSum').hidden=true;return}
+  const avg=RV.reduce((a,r)=>a+(+r.rating||0),0)/RV.length;
+  document.getElementById('rvSum').hidden=false;document.getElementById('rvAvg').textContent=avg.toFixed(1);
+  document.getElementById('rvAvgStars').innerHTML=starsHTML(Math.round(avg));document.getElementById('rvCount').textContent=RV.length+(RV.length===1?' approved review':' approved reviews');
+  rvList.innerHTML=RV.slice(0,rvShown).map(r=>`<article class="rv-card">${starsHTML(+r.rating||5)}<q>${esc(r.message)}</q><div class="rv-who"><span class="rv-av" aria-hidden="true">${esc((r.name||'?').trim().charAt(0).toUpperCase())}</span><div><b>${esc(r.name)}</b><small>${esc([r.business,r.product].filter(Boolean).join(' · '))}</small></div></div></article>`).join('')+(RV.length>rvShown?'<button class="btn btn-line rv-more" type="button" id="rvMore">Show more reviews</button>':'');
+  const m=document.getElementById('rvMore');if(m)m.onclick=()=>{rvShown+=4;renderReviews()};
+}
+function loadReviews(){getDB().then(db=>{if(!db){renderReviews();return}return db.collection('feedback').where('status','==','approved').limit(60).get().then(sn=>{RV=sn.docs.map(d=>d.data()).sort((a,b)=>((b.createdAt&&b.createdAt.seconds)||0)-((a.createdAt&&a.createdAt.seconds)||0));renderReviews()})}).catch(()=>renderReviews())}
+renderReviews();
+new IntersectionObserver((e,o)=>{if(e.some(x=>x.isIntersecting)){o.disconnect();loadReviews()}},{rootMargin:'600px'}).observe(document.getElementById('feedback'));
+
+/* Feedback form */
+const rvSel=document.getElementById('r-product');
+rvSel.innerHTML=P.filter(p=>p.slug!=='custom').map(p=>`<option>${p.t}</option>`).join('')+'<option>Custom software</option><option>Website</option><option selected>Other</option>';
+document.getElementById('rvForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const v=id=>document.getElementById(id).value.trim();const msgEl=document.getElementById('rvMsg');
+  const rating=+(document.querySelector('input[name="rating"]:checked')||{}).value||0;
+  let first=null;
+  const chk=(id,bad,m,errId)=>{const el=document.getElementById(id);if(el.tagName!=='FIELDSET')el.setAttribute('aria-invalid',bad);document.getElementById(errId||id+'-err').textContent=bad?m:'';if(bad&&!first)first=el};
+  chk('r-name',v('r-name').length<2,'Enter your name.');
+  chk('r5',!rating,'Choose a rating from 1 to 5 stars.','r-rate-err');
+  chk('r-msg',v('r-msg').length<10,'Write at least a short sentence (10 characters or more).');
+  if(first){first.focus();msgEl.textContent='';return}
+  const data={name:v('r-name'),business:v('r-biz'),product:v('r-product'),rating,message:v('r-msg')};
+  const btn=document.getElementById('rvBtn');btn.disabled=true;btn.textContent='Sending…';
+  getDB().then(db=>{
+    if(!db){const t='Customer feedback for ASMRY Soft Solution\n\nName: '+data.name+(data.business?'\nBusiness: '+data.business:'')+'\nProduct: '+data.product+'\nRating: '+rating+'/5\n\n'+data.message;window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');msgEl.textContent='Opening WhatsApp with your feedback. Press send there to deliver it. Thank you!';return}
+    return db.collection('feedback').add(Object.assign(data,{status:'pending',createdAt:firebase.firestore.FieldValue.serverTimestamp()})).then(()=>{msgEl.textContent='Thank you! Your feedback has been received and will appear after our team reviews it.';e.target.reset()});
+  }).catch(()=>{msgEl.textContent='Sorry, your feedback could not be sent. Please try again or send it on WhatsApp.'}).finally(()=>{btn.disabled=false;btn.textContent='Submit feedback'});
+});
+
+/* Save demo enquiries for the admin dashboard */
+function saveLead(via){getDB().then(db=>{if(!db)return;const v=id=>document.getElementById(id).value.trim();return db.collection('leads').add({name:v('f-name').slice(0,80),phone:v('f-phone').slice(0,30),business:v('f-biz').slice(0,80),product:v('f-product').slice(0,60),message:v('f-msg').slice(0,1000),via:via==='wa'?'WhatsApp':'Email',status:'new',createdAt:firebase.firestore.FieldValue.serverTimestamp()})}).catch(()=>{})}
 
 /* Header */
 const top_=document.getElementById('topbar');
